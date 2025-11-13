@@ -98,9 +98,10 @@ header p {
   position: relative;
 }
 .character-card img {
-  width: 320px;
-  height: 440px;
-  object-fit: cover;
+  width: 100%;
+  max-width: 320px;
+  height: auto;          /* Changed from 440px to auto */
+  object-fit: contain;   /* Changed from cover to contain */
   border-radius: 12px;
   border: 3px solid #e50914;
   margin-bottom: 30px;
