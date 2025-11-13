@@ -14,6 +14,7 @@ body {
     repeating-linear-gradient(45deg, rgba(20,0,0,0.5), rgba(20,0,0,0.5) 4px, rgba(0,0,0,0.5) 5px, rgba(0,0,0,0.5) 6px);
   color: #fff;
   text-align: center;
+  overflow-x: hidden;
 }
 
 /* Header */
@@ -98,10 +99,11 @@ header p {
   position: relative;
 }
 .character-card img {
-  width: 100%;
-  max-width: 320px;
-  height: auto;          /* Changed from 440px to auto */
-  object-fit: contain;   /* Changed from cover to contain */
+  width: auto;         /* maintain aspect ratio */
+  max-width: 100%;     /* scale down if too wide */
+  height: auto;        /* maintain aspect ratio */
+  max-height: 80vh;    /* full image visible in viewport */
+  object-fit: contain;
   border-radius: 12px;
   border: 3px solid #e50914;
   margin-bottom: 30px;
@@ -222,7 +224,7 @@ footer {
 <script>
 const characters = {
   mike: { img: "mike.jpg", html: `<h2>Mike Wheeler</h2><p>Portrayed by: Finn Wolfhard<br>Relationships: Brother of Nancy Wheeler; best friend of Will, Dustin, and Lucas; boyfriend of Eleven.<br><br>Personality & Traits: Mike is passionate, loyal, and often acts as the moral leader of his group. He’s deeply idealistic, valuing friendship, honesty, and love.<br><br>Character Development: From a curious boy who takes care of Eleven in his basement to a protective leader willing to fight dark forces, Mike’s growth centers on loyalty and empathy. His relationship with Eleven drives much of his emotional development, teaching him responsibility and courage.<br><br>Symbolism: Mike represents youthful hope and the belief in the power of friendship and love to overcome darkness.</p>` },
-  
+
   will: { img: "will.jpg", html: `<h2>Will Byers</h2><p>Portrayed by: Noah Schnapp<br>Relationships: Younger brother of Jonathan Byers; son of Joyce Byers; best friend of Mike, Dustin, and Lucas.<br><br>Personality & Traits: Will is gentle, sensitive, and artistic, often seen as the emotional heart of the group. He’s imaginative and deeply loyal to his friends.<br><br>Character Development: In Season 1, his disappearance into the Upside Down triggers the entire series’ events. After his rescue, he remains haunted by his connection to the supernatural world, particularly the Mind Flayer. His trauma and sense of alienation shape much of his story, especially as he struggles with identity and belonging.<br><br>Symbolism: Will represents innocence lost, the effects of trauma, and the struggle of feeling “different” in a world that doesn’t always understand.</p>` },
 
   eleven: { img: "eleven.jpg", html: `<h2>Eleven (Jane Hopper)</h2><p>Portrayed by: Millie Bobby Brown<br>Relationships: Adoptive daughter of Jim Hopper; girlfriend of Mike Wheeler; close to the main group.<br><br>Personality & Traits: Eleven is strong, brave, and emotionally complex. Initially nonverbal and traumatized by years of experimentation, she learns about friendship, love, and identity through the people who care for her.<br><br>Character Development: She starts as a mysterious lab experiment with psychokinetic powers but grows into a young woman who defines her own humanity. Her journey explores trauma recovery, self-discovery, and the meaning of family.<br><br>Symbolism: Eleven represents empowerment, the reclaiming of identity, and the triumph of compassion over control.</p>` },
