@@ -1,1 +1,175 @@
+/* Reset and base */
+body {
+    margin: 0;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    color: #f2f2f2;
+    text-align: center;
+    background: radial-gradient(circle at center, #3b0000 0%, #0b0000 90%);
+    background-image: url("veins-texture.png"); /* optional texture overlay */
+    background-blend-mode: overlay;
+    background-size: cover;
+}
 
+/* Optional subtle vein overlay effect (CSS only if no image) */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(90, 0, 0, 0.4) 0,
+        rgba(20, 0, 0, 0.4) 4px,
+        rgba(10, 0, 0, 0.5) 8px
+    );
+    mix-blend-mode: multiply;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Header */
+header {
+    padding: 40px 20px;
+    background-color: rgba(10, 0, 0, 0.8);
+    border-bottom: 3px solid #e50914;
+    text-shadow: 0 0 10px #e50914;
+}
+
+header h1 {
+    font-size: 3.5em;
+    color: #e50914;
+    margin: 0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Gallery Grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 60px;
+    justify-items: center;
+}
+
+/* Character Card Style */
+.gallery a {
+    background-color: rgba(20, 0, 0, 0.9);
+    border: 3px solid #e50914;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(229, 9, 20, 0.5);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px;
+    height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.gallery a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(229, 9, 20, 0.8);
+}
+
+/* Character Page Layout */
+.character-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+/* Card in Character Page */
+.character-card {
+    background-color: rgba(20, 0, 0, 0.9);
+    border: 3px solid #e50914;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(229, 9, 20, 0.6);
+    padding: 30px;
+    width: 90%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Character Image */
+.character-card img {
+    width: 320px;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #e50914;
+    margin-bottom: 30px;
+}
+
+/* Text Box */
+.text-box {
+    background-color: rgba(40, 0, 0, 0.85);
+    border-radius: 10px;
+    padding: 25px;
+    max-width: 800px;
+    position: relative;
+    font-family: 'Times New Roman', serif;
+    line-height: 1.6;
+    text-align: left;
+    color: #fefefe;
+}
+
+/* Headings inside text box */
+.text-box h2 {
+    color: #e50914;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.text-box h3 {
+    color: #b30000;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* Christmas light border around text */
+.text-box::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-radius: 10px;
+    box-shadow:
+        0 0 8px 2px rgba(255, 255, 0, 0.6),
+        0 0 10px 4px rgba(0, 255, 255, 0.6),
+        0 0 12px 6px rgba(255, 0, 0, 0.6);
+    animation: flicker 3s infinite alternate;
+}
+
+/* Flickering lights animation */
+@keyframes flicker {
+    0% { box-shadow: 0 0 6px 2px rgba(255, 255, 0, 0.5); }
+    25% { box-shadow: 0 0 10px 4px rgba(0, 255, 255, 0.6); }
+    50% { box-shadow: 0 0 12px 6px rgba(255, 0, 0, 0.7); }
+    75% { box-shadow: 0 0 8px 4px rgba(0, 255, 0, 0.5); }
+    100% { box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.6); }
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #aaa;
+    font-size: 0.9em;
+    border-top: 2px solid #e50914;
+}
